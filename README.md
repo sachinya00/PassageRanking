@@ -42,7 +42,7 @@
 # Instructions to run evaluation
 * **pip install -r requirements.txt** (Preferably in a virtual env)
 * Put the Test File (.tsv) inside data folder
-* Download the models from [Link] (https://drive.google.com/open?id=1XsS_1zjRtR06XADG7xFNk_a6JDUtDrEv)
+* Download the models from [Link](https://drive.google.com/open?id=1XsS_1zjRtR06XADG7xFNk_a6JDUtDrEv)
         and place them inside models folder.
 * In **test_model.py** change the **data_name** to name of the test file in options dictionary.
 * Run **test_model.py**

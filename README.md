@@ -6,37 +6,37 @@
     * Hidden_Size - Bert Hidden Size=768
     * IN:
         * Input Ids 
-            * (Shape: (C*10) x N) 
-            * (Single Input ex: [CLS] query Ids [SEP] Passage Ids [SEP])
+            * Shape: **(C*10) x N**
+            * Single Input ex: **[CLS] query Ids [SEP] Passage Ids [SEP]**
         * Segment Ids [Separate query Ids from passage Ids]
  
-            * (ex: [query Id, query Id, passage Id] -> [1,1,0])
-            * (Shape: (C*10) x N)
+            * ex: **[query Id, query Id, passage Id] -> [1,1,0]**
+            * Shape: **(C*10) x N**
 
         * Query Mask [For Handling Variable length sequences]
 
-            * (ex: [Id, Id, Id, 0, 0] -> [1, 1 1, 0, 0])
-            * (Shape: (C*10) x N)
+            * ex: **[Id, Id, Id, 0, 0] -> [1, 1 1, 0, 0]**
+            * Shape: **(C*10) x N**
 
         * Labels [Passage Instance Number 0-9]
 
-            * (Shape: (C*10) x 1)
+            * Shape: **(C*10) x 1**
 
    * OUT: Pooled Output
         
-        * (Shape : (C*10) x Hidden_Size)
+        * Shape : **(C*10) x Hidden_Size**
 
-* Dropout Layer - p=0.5
+* Dropout Layer [**p=0.5**]
 
-    * IN: (Shape : (C*10) x Hidden_Size)
-    * OUT: (Shape : (C*10) x Hidden_Size)
+    * IN: Shape : **(C*10) x Hidden_Size**
+    * OUT: Shape : **(C*10) x Hidden_Size**
 
 * Classifier - Fully Connected Layer (Linear Layer)
 
-    * IN: (C*10) x Hidden_Size 
-    * OUT: (C*10) x 1
+    * IN: **(C*10) x Hidden_Size** 
+    * OUT: **(C*10) x 1**
 
-* Output reshaped to C x 10 x 1
+* Output reshaped to **C x 10 x 1**
 
 
 # Instructions to run evaluation
